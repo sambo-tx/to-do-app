@@ -1,4 +1,5 @@
 function onReady(){
+  console.log("Onready WORKS")
   let toDos = [];
   const addToDoForm = document.getElementById('addToDoForm');
   const newToDoText = document.getElementById('newToDoText');
@@ -11,8 +12,10 @@ function onReady(){
        complete: false
      });
      newToDoText.value='';
+   }
      renderTheUI();
   function renderTheUI() {
+    console.log("UIworks");
     const toDoList = document.getElementById('toDoList');
      toDoList.textContent = '';
 
@@ -29,13 +32,16 @@ toDos.forEach(function(toDo) {
 
 });
   }
-
-   addToDoForm.addEventListener('submit', event => {
+const addToDoBtn = document.getElementById('addToDoBtn');
+   addToDoBtn.addEventListener('click', event => {
+     console.log("to do btn works");
       event.preventDefault();
       createNewToDo();
       newToDoText.value= '';
+      console.log("btn double works");
     });
     renderTheUI();
+    console.log("works");
 }
 window.onload = function() {
   onReady();
