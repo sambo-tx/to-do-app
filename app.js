@@ -10,7 +10,7 @@ function onReady(){
      toDos.push({
        title: newToDoText.value,
        complete: false,
-       id: id.value
+       id: id
      });
      id++;
      newToDoText.value='';
@@ -36,7 +36,7 @@ toDos.forEach(function(toDo) {
   const deleteBtn = document.createElement('button');
   deleteBtn.textContent="Delete";
   deleteBtn.addEventListener('click', event =>{
-    deleteToDo(toDos.id);
+    deleteToDo(toDo.id);
     renderTheUI();
 
   });
